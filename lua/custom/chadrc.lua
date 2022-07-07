@@ -6,8 +6,6 @@ local M = {}
 -- make sure you maintain the structure of `core/default_config.lua` here,
 -- example of changing theme:
 
-local my_highlights = require "custom.highlights"
-
 M.ui = {theme = "kanagawa", transparency = true}
 
 M.plugins = {
@@ -44,6 +42,13 @@ M.mappings = require "custom.mappings"
 M.options = {
     user = function()
         vim.opt.relativenumber = true
+        vim.api.nvim_command [[
+set cursorline
+hi cursorline cterm=none term=none
+autocmd WinEnter * setlocal cursorline
+autocmd WinLeave * setlocal nocursorline
+highlight CursorLine guibg=#222222 ctermbg=234
+]]
         -- vim.opt.list = true
         -- vim.opt.listchars:append "space:⋅"
         -- vim.opt.listchars:append "eol:↴"
