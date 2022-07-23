@@ -3,18 +3,13 @@ local b = null_ls.builtins
 
 local sources = {
     -- diagnostics
-    b.diagnostics.eslint_d,
+    b.diagnostics.eslint_d, b.diagnostics.tsc.with {filetypes = {"typescript"}},
     b.diagnostics.luacheck.with {extra_args = {"--global vim"}}, -- Shell
     b.diagnostics.shellcheck.with {diagnostics_format = "#{m} [#{c}]"},
 
     -- code_actions
     b.code_actions.eslint_d, -- formatting
-    b.formatting.eslint_d, b.formatting.prettierd.with {
-        filetypes = {
-            "css", "scss", "less", "html", "json", "jsonc", "yaml", "markdown",
-            "graphql", "handlebars"
-        }
-    }, b.formatting.deno_fmt, -- Lua
+    b.formatting.eslint_d, b.formatting.prettier, b.formatting.deno_fmt, -- Lua
     b.formatting.stylua, b.formatting.lua_format, b.formatting.shfmt
 }
 
