@@ -1,16 +1,12 @@
 local M = {}
 
+local lspconfig = require "lspconfig"
 local util = require "lspconfig.util"
 
 M.setup_lsp = function(attach, capabilities)
-    local lspconfig = require "lspconfig"
-
     -- lspservers with default config
     -- tsserver conflict with volar
-    local servers = {
-        "html", "cssls", "clangd", "eslint", "stylelint_lsp", "tailwindcss",
-        "sumneko_lua", "tsserver"
-    }
+    local servers = {"html", "cssls"}
     -- lspconfig.volar.setup {
     --
     --     filetypes = {
