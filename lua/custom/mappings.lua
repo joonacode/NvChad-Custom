@@ -5,25 +5,9 @@ local M = {}
 --    "<C-n>",
 -- }
 
-M.truzen = {
-    n = {
-        ["<leader>ta"] = {"<cmd> TZAtaraxis <CR>", "   truzen ataraxis"},
-        ["<leader>tm"] = {"<cmd> TZMinimalist <CR>", "   truzen minimal"},
-        ["<leader>tf"] = {"<cmd> TZFocus <CR>", "   truzen focus"}
-    }
-}
-
 M.treesitter = {
     n = {
         ["<leader>cu"] = {"<cmd> TSCaptureUnderCursor <CR>", "  find media"}
-    }
-}
-
-M.shade = {
-    n = {
-        ["<leader>s"] = {
-            function() require("shade").toggle() end, "   toggle shade.nvim"
-        }
     }
 }
 
@@ -51,7 +35,8 @@ M.general = {
         ["<A-j>"] = {"<Esc>:m .+1<CR>==gi", "Move text down"},
         ["<A-k>"] = {"<Esc>:m .-2<CR>==gi", "Move text down"},
         ["<leader>h"] = {"0", "Move to first element"},
-        ["<leader>l"] = {"$", "Move to last element"}
+        ["<leader>l"] = {"$", "Move to last element"},
+        ["<leader>e"] = {":NvimTreeToggle <CR>", "Toggle NvimTree"}
     },
     v = {
         ["<A-j>"] = {"<Esc>:m .+1<CR>==gi", "Move text down"},

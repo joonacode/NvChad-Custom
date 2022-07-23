@@ -6,7 +6,7 @@ local M = {}
 -- make sure you maintain the structure of `core/default_config.lua` here,
 -- example of changing theme:
 
-M.ui = {theme = "kanagawa", transparency = false}
+M.ui = {theme = "onedark", transparency = false}
 
 M.plugins = {
     options = {lspconfig = {setup_lspconf = "custom.plugins.lspconfig"}},
